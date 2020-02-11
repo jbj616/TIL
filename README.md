@@ -1,2 +1,14 @@
-# TIL
-Today I Learned / 불규칙한 생활속에서 코딩의 끈을 놓지 않는다
+# TIL : Today I Learned
+> 오늘 학습하고 정리한 내용들을 정리해두는 저장소
+>
+> [Integerous](https://github.com/Integerous/TIL) 님과 [namjunemy](https://github.com/namjunemy/TIL)님의 Github TIL 보고 영감을 얻음.
+
+
+
+### 작성 규칙
+
+- 폴더와 파일명은 영문으로 작성하며 카테고리별로 구별한다.
+- 잔디보다는 몸을 생각하며 과하지 않게 스터디에 임한다.
+
+---
+
