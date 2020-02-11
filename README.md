@@ -16,4 +16,3 @@
 
 - book
   - [JUnit in Action](./book/JUnit_in_Action.md)
-
