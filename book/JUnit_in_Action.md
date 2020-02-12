@@ -7,8 +7,8 @@
 ### 목차
 
 - [01-Intro](#01Intro)
-- [02-JUnit핵심](02Junit 핵심)
-- [03-JUnit마스터하기](03.JUnit 마스터하기)
+- [02-JUnit핵심](#02Junit-핵심)
+- [03-JUnit마스터하기](#03JUnit-마스터하기)
 
 
 
