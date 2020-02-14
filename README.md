@@ -17,7 +17,8 @@
 - HTTP
   - [HTTP Intro](./HTTP/HTTP_Intro.md)
   - [URL](./HTTP/URL.md)
-  - [HTTP 메시지](./HTTP/HTTP 메시지.md)
+  - [HTTP 메시지](./HTTP/HTTP-메시지.md)
+  - [커넥션 관리](./HTTP/커넥션-관리.md)
 
 - book
   - [JUnit in Action](./book/JUnit_in_Action.md)
