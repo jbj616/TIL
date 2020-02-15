@@ -10,6 +10,8 @@
 - [02-JUnit핵심](#02Junit-핵심)
 - [03-JUnit마스터하기](#03JUnit-마스터하기)
 - [04-소프트웨어 테스트 원칙](#04소프트웨어-테스트-원칙)
+- [05-테스트 커버리지와 개발](#05테스트-커버리지와-개발)
+- [06-스텀을 활용한 포괄적인 테스트](#06스텀을-활용한-포괄적인-테스트)
 
 
 
@@ -674,3 +676,189 @@ TDD : 테스트 - 코드 - (반복) - 커밋
 - 프로덕션 플랫폼 : 실제 운영환경
 
 ![](./img/junit-in-action_5.png)
+
+
+
+### 06.스텀을 활용한 포괄적인 테스트
+
+> 테스트 대상 코드가 다른 클래스에 종속되어 있는 경우가 발생함
+>
+> 외부에 의존적인 애플리케이션 테스트에 JUnit을 활용하는 방법을 알아 보자
+
+#### 스텁이란?
+
+스텁 : 실제 코드나 아직 준비되지 못한 코드의 행동으로 가장하는 메커니즘을 뜻함.
+
+> 호출자를 실제 구현물로부터 격리시킬 목적으로 런타임에 실제 코드 대신 삽입되는 코드 조각이다. 보다 복잡한 행위를 단순한 것으로 교체하여 실 코드의 일부를 독립적으로 테스트하기 위한 의도로 사용
+
+- 시스템이 너무 복잡하고 깨지기 쉬워 수정이 불가할 때
+- 하부 시스템 간의 통합 테스트처럼 포괄적인 테스트를 수행할 때
+
+
+
+#### HTTP 커넥션을 스텁으로 대체하기
+
+```java
+public class WebClient {
+
+    public String getContent(URL url) {
+        StringBuffer content = new StringBuffer();
+        try {
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setDoInput(true);
+            InputStream inputStream = connection.getInputStream();
+            byte[] buffer = new byte[2048];
+            int count;
+            while (-1 != (count = inputStream.read(buffer))) {
+                content.append(new String(buffer, 0, count));
+            }
+        } catch (IOException e) {
+            return null;
+        }
+        return content.toString();
+    }
+
+}
+```
+
+<예제 webclient>
+
+1. 스텁 방식 선택하기
+   - Jetty 서버 
+     - 사용 이유 : 빠르고, 가볍고, 테스트 케이스에서 프로그램적으로 제어할 수 있다. 뿐만아니라 상용 서비스에서 활용할 수 있는 웹 서버이자 서블릿/JSP 컨테이너이기 때문
+
+2. 임베디스 서버로 Jetty 활용하기
+
+   ```java
+   import org.mortbay.jetty.Server;
+   import org.mortbay.jetty.handler.ResourceHandler;
+   import org.mortbay.jetty.servlet.Context;
+   
+   public class JettySample {
+   
+       public static void main(String[] args) throws Exception{
+   
+           Server server = new Server(8080);
+   
+           Context root = new Context(server, "/");
+           root.setResourceBase("./pom.xml");
+           root.setHandler(new ResourceHandler());
+   
+           server.start();;
+       }
+   }
+   ```
+
+   - jetty dependency 추가해야함
+
+
+
+#### 웹 서버의 리소스를 스텁으로 대체하기
+
+```java
+public class TestWebClient {
+
+    @BeforeClass
+    public static void setUP() throws Exception {
+        Server server = new Server(8080);
+
+        TestWebClient t = new TestWebClient();
+
+        Context contentOkContext = new Context(server, "/testGetContentOk");
+        contentOkContext.setHandler(t.new TestGetContentOkHandler());
+
+        Context contentNotFoundContext = new Context(server, "/testGetContentNotFound");
+        contentNotFoundContext.setHandler(t.new TestGetContentNotFoundHandler());
+        server.setStopAtShutdown(true);
+        server.start();
+    }
+
+    @Test
+    public void testGetContentOk() throws Exception {
+        WebClient client = new WebClient();
+        String result = client.getContent(new URL("http://localhost:8080/testGetContentOk"));
+        assertEquals("It works", result);
+
+    }
+
+    @Test
+    public void testGetContentNotFound() throws Exception{
+        WebClient webClient = new WebClient();
+        String result = webClient.getContent(new URL("http://localhost:8080/testGetContentNotFound"));
+        assertNull(result);
+    }
+
+    @AfterClass
+    public static void tearDown() {
+
+    }
+
+    private class TestGetContentOkHandler extends AbstractHandler {
+
+        public void handle(String s, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse,
+                           int i) throws IOException, ServletException {
+
+            OutputStream out = httpServletResponse.getOutputStream();
+            ByteArrayISO8859Writer writer = new ByteArrayISO8859Writer();
+            writer.write("It works");
+            writer.flush();
+            httpServletResponse.setIntHeader(HttpHeaders.CONTENT_LENGTH, writer.size());
+            writer.writeTo(out);
+            out.flush();
+        }
+    }
+
+    private class TestGetContentNotFoundHandler extends AbstractHandler {
+
+        public void handle(String s, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse,
+                           int i) throws IOException, ServletException {
+            httpServletResponse.sendError(HttpServletResponse.SC_NOT_FOUND);
+        }
+    }
+}
+```
+
+- handler를 만들어 요청에 대한 응답을 전송한다
+- 서버를 실행시키고 test를 진행한다
+- 실패 조건 Notfound 또한 테스트를 진행한다
+
+
+
+커스텀 URL 프로토콜 핸들러 제작하기
+
+```java
+public class TestWebClient1 {
+
+    @BeforeClass
+    public static void setUp() {
+        TestWebClient1 t1 = new TestWebClient1();
+        URL.setURLStreamHandlerFactory(t1.new StubStreamHandlerFactory());
+    }
+
+    private class StubStreamHandlerFactory implements URLStreamHandlerFactory {
+
+        public URLStreamHandler createURLStreamHandler(String protocol) {
+            return new StubHttpURLStreamHandler();
+        }
+    }
+
+    private class StubHttpURLStreamHandler extends URLStreamHandler {
+
+        protected URLConnection openConnection(URL url) throws IOException {
+            return new StubHttpURLConnection(url);
+        }
+    }
+
+    @Test
+    public void testGetContentOk() throws Exception {
+        WebClient client = new WebClient();
+        String result = client.getContent(new URL("http://localhost"));
+        assertEquals("It works", result);
+    }
+}
+```
+
+- setURLStreamHandler Factory를 호출하여 StubStreamHAndlerFactory를 등록한다
+- StubStreamHandlerFactory는 createURLStreamHandler 를 오버라이드하여 StubHttpURLStreamHanler를 반환한다
+- StubHttpURLStreamHanler는 openConnection 메서드로 URL에 커넥션을 맺도록 한다
+
