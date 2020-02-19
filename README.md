@@ -17,19 +17,17 @@
 
 - Java
   - [java8 - Stream](./Java/java8%20-%20Stream.md)
-
+- Design Pattern
+  - [Singleton](./Design Pattern/싱글톤%20패턴.md)
 - Git
   - [Git Branch 전략](./Git/Git%20Branch%20전략.md)
-
 - Algorithm
   - [KMP](./Algorithm/KMP.md)
-
 - HTTP
   - [HTTP Intro](./HTTP/HTTP_Intro.md)
   - [URL](./HTTP/URL.md)
   - [HTTP 메시지](./HTTP/HTTP%20메시지.md)
   - [커넥션 관리](./HTTP/커넥션%20관리.md)
-
 - book
   - [JUnit in Action](./book/JUnit_in_Action.md)
 
