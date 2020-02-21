@@ -18,7 +18,7 @@
 - Java
   - [java8 - Stream](./Java/java8%20-%20Stream.md)
 - Design Pattern
-  - [Singleton](./Design Pattern/싱글톤%20패턴.md)
+  - [Singleton](./Design%20Pattern/싱글톤%20패턴.md)
 - Git
   - [Git Branch 전략](./Git/Git%20Branch%20전략.md)
 - Algorithm
