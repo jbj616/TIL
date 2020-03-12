@@ -27,7 +27,7 @@
   - [Tutorial](./Docker/Docker%20Tutorial.md)
 - Algorithm
   - Daily Programing
-    - [#1](./Algorithm/DailyProgramming/매일%20프로그래밍%20%231.md) [#2](./Algorithm/DailyProgramming/매일%20프로그래밍%20%232.md) [#3](./Algorithm/DailyProgramming/매일%20프로그래밍%20%233.md) [#4](./Algorithm/DailyProgramming/매일%20프로그래밍%20%234.md) [#5](./Algorithm/DailyProgramming/매일%20프로그래밍%20%235.md) [#6](./Algorithm/DailyProgramming/매일%20프로그래밍%20%236.md) [#7](./Algorithm/DailyProgramming/매일%20프로그래밍%20%237.md) [#8](./Algorithm/DailyProgramming/매일%20프로그래밍%20%238.md) [#9](./Algorithm/DailyProgramming/매일%20프로그래밍%20%239.md) [#10](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2310.md) [#11](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2311.md) [#12](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2312.md) 
+    - [#1](./Algorithm/DailyProgramming/매일%20프로그래밍%20%231.md) [#2](./Algorithm/DailyProgramming/매일%20프로그래밍%20%232.md) [#3](./Algorithm/DailyProgramming/매일%20프로그래밍%20%233.md) [#4](./Algorithm/DailyProgramming/매일%20프로그래밍%20%234.md) [#5](./Algorithm/DailyProgramming/매일%20프로그래밍%20%235.md) [#6](./Algorithm/DailyProgramming/매일%20프로그래밍%20%236.md) [#7](./Algorithm/DailyProgramming/매일%20프로그래밍%20%237.md) [#8](./Algorithm/DailyProgramming/매일%20프로그래밍%20%238.md) [#9](./Algorithm/DailyProgramming/매일%20프로그래밍%20%239.md) [#10](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2310.md) [#11](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2311.md) [#12](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2312.md) [#13](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2313.md) 
   - [KMP](./Algorithm/KMP.md)
 - Spring
   - [생성자 주입을 사용하는 이유](./Spring/생성자%20주입을%20사용하는%20이유.md)
@@ -41,4 +41,6 @@
   - [커넥션 관리](./HTTP/커넥션%20관리.md)
 - book
   - [JUnit in Action](./book/JUnit_in_Action.md)
+- 삽질한 내용
+  - [ec에서 jenkins 설정 후 build](./삽질/Jenkins와%20Docker%20삽질기%20(으쌰 프로젝트))
 
