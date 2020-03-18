@@ -42,5 +42,6 @@
 - book
   - [JUnit in Action](./book/JUnit_in_Action.md)
 - 삽질한 내용
-  - [ec에서 jenkins 설정 후 build](./삽질/Jenkins와%20Docker%20삽질기%20(으쌰 프로젝트))
+  - [ec에서 jenkins 설정 후 build](Jenkins와%20Docker%20삽질기%20(으쌰%20프로젝트).md)
+  - [Travis CI  Coveralls  aws code deploy 구축](./삽질/Travis%20CI%20%20Coveralls%20%20aws code%20deploy%20구축.md)
 
