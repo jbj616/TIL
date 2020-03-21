@@ -49,7 +49,28 @@
   travis 암호화 기능을 활용하여 key 값보이지 않게하기 / travis 세팅하는 곳에서 key값 정의 해놓기
   ```
 
-  
+
+
+
+#### 발생한 문제
+
+- Application yml 에 설정된 secret key 같은 민간함 정보를 담을 때 git에 올릴수 없고 그로 인해 발생된 travis build 실패를 방지하기 위한 조치
+
+  - ```
+    email : ${MAIL_EMAIL} //application.yml
+    ```
+
+    - MAIL_EMAIL를 환경변수로 지정하기
+
+  - ```yml
+    env:
+    	MAIL_EMAIL = $MAIL_EMAIL //.travis.yml
+    ```
+
+    - MAIL_EMAIL의 값을 travis 환경변수로 설정
+    - 설정된 환경변수는 travis 사이트에서 value값 지정하기
+
+
 
 ### Coveralls
 
