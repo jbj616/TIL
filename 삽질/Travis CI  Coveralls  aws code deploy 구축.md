@@ -60,15 +60,7 @@
     email : ${MAIL_EMAIL} //application.yml
     ```
 
-    - MAIL_EMAIL를 환경변수로 지정하기
-
-  - ```yml
-    env:
-    	MAIL_EMAIL = $MAIL_EMAIL //.travis.yml
-    ```
-
-    - MAIL_EMAIL의 값을 travis 환경변수로 설정
-    - 설정된 환경변수는 travis 사이트에서 value값 지정하기
+    - MAIL_EMAIL를 환경변수로 지정하기(travis)
 
 
 
