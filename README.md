@@ -44,4 +44,5 @@
 - 삽질한 내용
   - [ec에서 jenkins 설정 후 build](Jenkins와%20Docker%20삽질기%20(으쌰%20프로젝트).md)
   - [Travis CI  Coveralls  aws code deploy 구축](./삽질/Travis%20CI%20%20Coveralls%20%20aws%20code%20deploy%20구축.md)
+  - [스프링 부트 실행시 환경 변수 설정 안되는 문제](./삽질/스프링%20부트%20실행시%20환경%20변수%20설정%20안되는%20문제.md)
 
