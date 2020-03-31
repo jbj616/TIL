@@ -9,7 +9,6 @@
 
 - 폴더와 파일명은 영문으로 작성하며 카테고리별로 구별한다.
 - 잔디보다는 몸을 생각하며 과하지 않게 스터디에 임한다.
-- 짧아도 좋으니 일일 회고를 작성하자 ( ~ 20.02.16 )
 
 ---
 
@@ -27,7 +26,7 @@
   - [Tutorial](./Docker/Docker%20Tutorial.md)
 - Algorithm
   - Daily Programing
-    - [#1](./Algorithm/DailyProgramming/매일%20프로그래밍%20%231.md) [#2](./Algorithm/DailyProgramming/매일%20프로그래밍%20%232.md) [#3](./Algorithm/DailyProgramming/매일%20프로그래밍%20%233.md) [#4](./Algorithm/DailyProgramming/매일%20프로그래밍%20%234.md) [#5](./Algorithm/DailyProgramming/매일%20프로그래밍%20%235.md) [#6](./Algorithm/DailyProgramming/매일%20프로그래밍%20%236.md) [#7](./Algorithm/DailyProgramming/매일%20프로그래밍%20%237.md) [#8](./Algorithm/DailyProgramming/매일%20프로그래밍%20%238.md) [#9](./Algorithm/DailyProgramming/매일%20프로그래밍%20%239.md) [#10](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2310.md) [#11](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2311.md) [#12](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2312.md) [#13](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2313.md) [#14](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2314.md) [#15](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2315.md) [#16](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2316.md) [#17](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2317.md) [#18](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2318.md) [#19](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2319.md) [#20](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2320.md) [#21](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2321.md) [#22](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2322.md) [#23](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2323.md) [#24](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2324.md) [#25](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2325.md) 
+    - [#1](./Algorithm/DailyProgramming/매일%20프로그래밍%20%231.md) [#2](./Algorithm/DailyProgramming/매일%20프로그래밍%20%232.md) [#3](./Algorithm/DailyProgramming/매일%20프로그래밍%20%233.md) [#4](./Algorithm/DailyProgramming/매일%20프로그래밍%20%234.md) [#5](./Algorithm/DailyProgramming/매일%20프로그래밍%20%235.md) [#6](./Algorithm/DailyProgramming/매일%20프로그래밍%20%236.md) [#7](./Algorithm/DailyProgramming/매일%20프로그래밍%20%237.md) [#8](./Algorithm/DailyProgramming/매일%20프로그래밍%20%238.md) [#9](./Algorithm/DailyProgramming/매일%20프로그래밍%20%239.md) [#10](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2310.md) [#11](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2311.md) [#12](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2312.md) [#13](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2313.md) [#14](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2314.md) [#15](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2315.md) [#16](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2316.md) [#17](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2317.md) [#18](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2318.md) [#19](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2319.md) [#20](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2320.md) [#21](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2321.md) [#22](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2322.md) [#23](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2323.md) [#24](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2324.md) [#25](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2325.md) [#26](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2325.md) [#27](./Algorithm/DailyProgramming/매일%20프로그래밍%20%2327.md) 
   - [KMP](./Algorithm/KMP.md)
 - Spring
   - [생성자 주입을 사용하는 이유](./Spring/생성자%20주입을%20사용하는%20이유.md)
